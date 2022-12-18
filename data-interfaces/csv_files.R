@@ -60,3 +60,13 @@ retval <- subset(data, as.Date(start_date) > as.Date("2014-01-01"))
 write.csv(retval,"c:/workspace/LEARNING-R/data-interfaces/output/output.csv")
 newdata <- read.csv("c:/workspace/LEARNING-R/data-interfaces/output/output.csv")
 print(newdata)
+
+# Here the column X comes from the data set newper. This can be dropped using additional parameters while writing the file.
+# Create a data frame.
+data <- read.csv("c:/workspace/LEARNING-R/data-interfaces/input/sample1.csv")
+retval <- subset(data, as.Date(start_date) > as.Date("2014-01-01"))
+
+# Write filtered data into a new file.
+write.csv(retval,"c:/workspace/LEARNING-R/data-interfaces/output/output1.csv", row.names = FALSE)
+newdata <- read.csv("c:/workspace/LEARNING-R/data-interfaces/output/output1.csv")
+print(newdata)
